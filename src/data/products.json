@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "title": "Impresora Brother 1212w",
+        "description": "Impresora Laser Monocromatica Brother 1212w c/ Wifi",
+        "price": 120000,
+        "stock": 6,
+        "category": "Impresoras",
+        "images": "https://www.tonercordoba.com.ar/13-large_default/impresora-laser-brother-hl-1212w.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Impresora HP Laser 107A",
+        "description": "Impresora Laser Monocromatica HP Laser 107a",
+        "price": 110000,
+        "stock": 15,
+        "category": "Impresoras",
+        "images": "https://www.mebac.com.ar/salta/wp-content/uploads/2020/02/21.01.106_1000-2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Motherboard Asrock Z590 OC Formula",
+        "description": "Motherboard Asrock Z590 OC Formula. Socket 1200 / Intel Gen 11 & 10 / DDR4",
+        "price": 400000,
+        "stock": 1,
+        "category": "Motherboards",
+        "images": "https://front.dev.malditohard.com.ar/img/migration/MOTHER-ASROCK-Z590-OC-FORMULA-INTEL-1200.webp"
+    },
+    {
+        "id": 4,
+        "title": "Mouse GX Gaming Scorpion",
+        "description": "Mouse Gamer GX Gaming Scorpion M8-610.",
+        "price": 50000,
+        "stock": 100,
+        "category": "Mouses",
+        "images": "https://www.mink.com.ar/qloud/ryr/fotos/12397-0.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Notebook Lenovo V15-G2 ITL",
+        "description": "Notebook Lenovo V15-G2 ITL / Intel Core I5 / 8GB RAM / SSD 256GB / Pantalla 15.6'",
+        "price": 565000,
+        "stock": 7,
+        "category": "Notebooks",
+        "images": "https://www.venex.com.ar/products_images/1650999681_notebook-lenovo-v15-g2-i5-1135g7-8gb-ssd-256gb-15.6-free.jpg"
+    },
+    {
+        "id": 6,
+        "title": "PC Intel Core I3",
+        "description": "PC de Escritorio Intel Core I3 / 8GB RAM / SSD 240GB / Kit de Gabinete",
+        "price": 400000,
+        "stock": 10,
+        "category": "PCs",
+        "images": "https://www.megatecnologia.com.ar/thumb/1682105591309_800x800.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Microprocesador Intel Core I5 11400",
+        "description": "Microprocesador Intel Core I5 11400 c/video c/cooler socket 1200",
+        "price": 280000,
+        "stock": 13,
+        "category": "Procesadores",
+        "images": "https://www.fullh4rd.com.ar/img/productos/1/micro-intel-core-i5-11400-0.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Monitor 19' Samsung S33A",
+        "description": "Monitor LED Samsung 19' S33A VGA/HDMI",
+        "price": 100000,
+        "stock": 22,
+        "category": "Monitores",
+        "images": "https://www.fullh4rd.com.ar/img/productos/18/monitor-22-samsung-s33a-fhd-hdmi-vga-0.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Tablet Samsung A8 X200",
+        "description": "Tablet Samsung A8 X200 (4GB RAM / 64GB Almacenamiento / Pantalla 10.5' ",
+        "price": 250000,
+        "stock": 3,
+        "category": "Tablets",
+        "images": "https://s3.eu-west-3.amazonaws.com/class-website-9565/2022/02/wPGvX25602.jpg"
+    },
+    {
+        "id": 10,
+        "title": "PC Intel Core I5",
+        "description": "PC de Escritorio Intel Core I5 / 16GB RAM / SSD 480GB / Kit de Gabinete",
+        "price": 450000,
+        "stock": 4,
+        "category": "PCs",
+        "images": "https://statics.qloud.com.ar/noxie-store-08-2022/274_08-01-2024-01-01-43-i513400.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Notebook Asus X515EA",
+        "description": "Notebook Asus X515EA / Intel Core I3 / 8GB RAM / SSD 240GB / Pantalla 15.6'",
+        "price": 640000,
+        "stock": 8,
+        "category": "Notebooks",
+        "images": "https://s3-sa-east-1.amazonaws.com/saasargentina/JyNMe54QqkoWP7UGGiz6/imagen"
+    },
+    {
+        "id": 12,
+        "title": "Notebook HP 250 G8",
+        "description": "Notebook HP 250 G8 / Intel Core I3 / 8GB RAM / SSD 256GB / Pantalla 15.6'",
+        "price": 630000,
+        "stock": 12,
+        "category": "Notebooks",
+        "images": "https://mexx-img-2019.s3.amazonaws.com/Notebook-Hp-250-G8-Core-i3-1115G4-8Gb-256Gb-15-Win11_45671_1.jpeg"
+    },
+    {
+        "id": 13,
+        "title": "Monitor 22' Samsung S33A",
+        "description": "Monitor LED Samsung 22' Full HD 60Hz",
+        "price": 120000,
+        "stock": 6,
+        "category": "Monitores",
+        "images": "https://mexx-img-2019.s3.amazonaws.com/Monitor-Led-22-Samsung-Full-Hd-60Hz-6Ms-S33A_43564_1.jpeg"
+    },
+    {
+        "id": 14,
+        "title": "Monitor 24' Asus VA24EHE ",
+        "description": "Monitor LED Asus 24' Full HD 75Hz FreeSync",
+        "price": 240000,
+        "stock": 17,
+        "category": "Monitores",
+        "images": "https://mexx-img-2019.s3.amazonaws.com/monitor-asus-gamer_39781_1.jpeg"
+    },
+    {
+        "id": 15,
+        "title": "Gabinete AeroCool Bolt",
+        "description": "Gabinete AeroCool Bolt Mid Tower ATX RGB",
+        "price": 50000,
+        "stock": 2,
+        "category": "Gabinetes",
+        "images": "https://aerocool.io/wp-content/uploads/2019/02/Bolt-Infographic700x700-01-600x600.jpg"
+    },
+    {
+        "id": 16,
+        "title": "Gabinete Shenlong GT-701",
+        "description": "Gabinete Shenlong GT-701 RGB USB 3.0 Lateral Acrilico",
+        "price": 80000,
+        "stock": 9,
+        "category": "Gabinetes",
+        "images": "https://http2.mlstatic.com/D_NQ_NP_737244-MLA43597706934_092020-O.webp"
+    },
+    {
+        "id": 17,
+        "title": "Teclado Genius GX Gaming Scorpion K8 ",
+        "description": "Teclado Genius GX Gaming Scorpion K8 Negro RGB",
+        "price": 25000,
+        "stock": 10,
+        "category": "Teclados",
+        "images": "https://front.dev.malditohard.com.ar/img/migration/TECLADO-GAMER-GX-GAMING-GENIUS-SCORPION-K8.webp"
+    },
+    {
+        "id": 18,
+        "title": "Teclado Mecanico HyperX Alloy Origins",
+        "description": "Teclado Mecanico HyperX Alloy Origins 65 Switch Red 4P5D6AA",
+        "price": 97000,
+        "stock": 8,
+        "category": "Teclado",
+        "images": "https://www.fullh4rd.com.ar/img/productos/8/teclado-mecanico-hyperx-alloy-origins-65-switch-red-4p5d6aa-0.jpg"
+    },
+    {
+        "id": 19,
+        "title": "Procesador Intel Core I7 13700KF",
+        "description": "Procesador Intel Core I7 13700KF s/cooler s/video socket 1700",
+        "price": 670000,
+        "stock": 14,
+        "category": "Procesadores",
+        "images": "https://mexx-img-2019.s3.amazonaws.com/Procesador-Intel-Core-i7-13700KF-5Ghz-Raptor-Lake-1700_44383_1.jpeg"
+    },
+    {
+        "id": 20,
+        "title": "Procesador AMD Ryzen 5 7600",
+        "description": "Procesador AMD Ryzen 5 7600 c/cooler socket AM5",
+        "price": 380000,
+        "stock": 3,
+        "category": "Procesadores",
+        "images": "https://images.start.com.ar/100-100001015BOX.jpg"
+    },
+    {
+        "id": 21,
+        "title": "Mother Gigabyte H610M-H",
+        "description": "Mother Gigabyte H610M-H DDR4 socket 1700",
+        "price": 125000,
+        "stock": 6,
+        "category": "Motherboards",
+        "images": "https://www.fullh4rd.com.ar/img/productos/2/mother-gigabyte-h610mh-ddr4-s1700-0.jpg"
+    },
+    {
+        "id": 22,
+        "title": "Memoria Kingston 8GB DDR5 6000Mhz",
+        "description": "Memoria Kingston Fury Beast 8GB DDR5 6000Mhz RGB",
+        "price": 81000,
+        "stock": 20,
+        "category": "Memorias RAM",
+        "images": "https://www.fullh4rd.com.ar/img/productos/4/memoria-8gb-ddr5-6000-kingston-fury-beast-rgb-0.jpg"
+    },
+    {
+        "id": 23,
+        "title": "Memoria XPG Lancer 16GB DDR5 5600Mhz",
+        "description": "Memoria XPG Lancer 16GB DDR5 5600Mhz Black",
+        "price": 89000,
+        "stock": 7,
+        "category": "Memorias RAM",
+        "images": "https://www.fullh4rd.com.ar/img/productos/4/memoria-16gb-ddr5-5600-adata-xpg-lancer-black-0.jpg"
+    },
+    {
+        "id": 24,
+        "title": "SSD Kingston 500GB NV2",
+        "description": "SSD Kingston 500GB NV2 GEN4 3500Mb/s",
+        "price": 45000,
+        "stock": 3,
+        "category": "Almacenamiento",
+        "images": "https://www.fullh4rd.com.ar/img/productos/12/hd-ssd-500gb-kingston-snvs-nv2-nvme-gen4-3500-mbs-q-480-0.jpg"
+    },
+    {
+        "id": 25,
+        "title": "HDD 1TB Western Digital Purple",
+        "description": "HDD 1TB Western Digital Purple",
+        "price": 73000,
+        "stock": 11,
+        "category": "Almacenamiento",
+        "images": "https://www.fullh4rd.com.ar/img/productos/12/disco-hdd-1tb-sata3-wd-purple-0.jpg"
+    }
+]

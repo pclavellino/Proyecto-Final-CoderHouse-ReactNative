@@ -1,0 +1,37 @@
+import { Text, View, Image, StyleSheet } from "react-native";
+import colors from "../global/colors";
+
+const ProductItem = ({product}) => {
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>{product.title}</Text>
+            <Image source={{uri: product.images}} style={styles.image}/>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:'space-between',
+        backgroundColor: colors.orange,
+        marginVertical: '2.5%',
+        paddingHorizontal: '7.5%',
+        paddingVertical: '5%',
+        borderRadius: 7,
+    },
+    title: {
+        fontSize: 18,
+        fontFamily: 'Rubik',
+        width: '60%',
+    },
+    image: {
+        width: 80,
+        height: 80,
+        borderRadius: 10
+    }
+})
+
+export default ProductItem;

@@ -1,16 +1,15 @@
 [
     "PCs",
     "Notebooks",
-    "Monitores",
     "Tablets",
+    "Monitores",
     "Impresoras",
+    "Gabinetes",
     "Teclados",
     "Mouses",
     "Parlantes",
     "Procesadores",
     "Motherboards",
     "Memorias RAM",
-    "Almacenamiento",
-    "Gabinetes",
-    "Fuentes de Alimentación"    
+    "Almacenamiento" 
 ]
