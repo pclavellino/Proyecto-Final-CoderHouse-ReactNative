@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     listContainer: {
-        marginTop: '5%',
         width:'75%'
     },
     button: {
         width: 100,
         backgroundColor: colors.violet,
+        marginTop: 25,
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 10,
