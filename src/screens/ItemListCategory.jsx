@@ -1,44 +1,41 @@
-import { FlatList, Pressable, View, Text, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
 import Search from "../components/Search";
 import ProductItem from "../components/ProductItem";
 import products from "../../src/data/products.json";
 import colors from "../global/colors";
 
 
-const ItemListCategory = ({categorySelected, setCategorySelected}) => {
+const ItemListCategory = ({navigation, route}) => {
 
     const [selectedProducts, setSelectedProducts] = useState([]);
     const [keyword, setKeyword] = useState('')
 
+    const { category } = route.params
+
     useEffect(() => {
-        if (categorySelected) {
-            const productSelected = products.filter((item) => item.category === categorySelected)
+        if (category) {
+            const productSelected = products.filter((item) => item.category === category)
             const productFiltered = productSelected.filter((item) => item.title.includes(keyword))
             setSelectedProducts(productFiltered)
         } else {
             const productFiltered = products.filter((item) => item.title.includes(keyword))
             setSelectedProducts(productFiltered)
         }
-    }, [categorySelected, keyword])
+    }, [category, keyword])
     
     return (
 
         <View style={styles.container}>
-            <Header/>
             <Search onSearch={setKeyword}/>
             <FlatList
                 style={styles.listContainer}
                 data={selectedProducts}
-                renderItem={({item}) => <ProductItem product={item}/>}
+                renderItem={({item}) => <ProductItem product={item} navigation={navigation}/>}
                 keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 >
             </FlatList> 
-            <Pressable style={styles.button} onPress={ () => setCategorySelected(false)}>
-                <Text style={styles.buttonText}>Volver</Text>
-            </Pressable>
         </View>
 
     )

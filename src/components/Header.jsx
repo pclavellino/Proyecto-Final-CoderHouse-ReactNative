@@ -1,13 +1,16 @@
-import { Image, View, StyleSheet } from "react-native";
+import { Image, View, Text, StyleSheet, StatusBar } from "react-native";
 import Logo from "./Logo";
 import cartImage from '../../assets/cart.png';
 import colors from "../global/colors";
 
-const Header = () => {
+const Header = ({title}) => {
     return (
-        <View style={styles.containerTitle}>
-            <Logo/>
-            <Image style={styles.cart} source={cartImage}/>
+        <View>
+            <View style={styles.containerTitle}>
+                <Logo/>
+                <Image style={styles.cart} source={cartImage}/>
+            </View>
+            <Text style={styles.title}>{title}</Text>
         </View>
     )
 }
@@ -23,11 +26,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         width: '100%',
-        borderBottomColor: colors.violet,
-        borderBottomWidth: 5,
     },
     cart: {
         width: 30,
         height: 30
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#FFFFFF',
+        paddingTop: 5,
+        paddingBottom: 10,
+        marginBottom: 10,
+        backgroundColor: colors.violet,
+        width: '100%'
     }
 })

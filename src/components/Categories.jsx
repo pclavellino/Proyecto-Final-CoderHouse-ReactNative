@@ -1,17 +1,14 @@
-import { FlatList, View, StyleSheet, Text } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import CategoryItem from "./CategoryItem";
 import categories from "../data/categories.json";
-import colors from "../global/colors";
 
-
-const Categories = ({setCategorySelected}) => {
+const Categories = ({navigation}) => {
     return (
         <View style={styles.listContainer}>
-            <Text style={styles.title}>Categorias</Text>
             <FlatList
                 style={styles.list}
                 data={categories}
-                renderItem={({item}) => <CategoryItem category={item} setCategorySelected={setCategorySelected}/>}
+                renderItem={({item}) => <CategoryItem category={item} navigation={navigation}/>}
                 keyExtractor={(category) => category}
                 showsVerticalScrollIndicator={false}
             />
@@ -24,17 +21,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: '100%'
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: '#FFFFFF',
-        paddingTop: 5,
-        paddingBottom: 10,
-        marginBottom: 20,
-        backgroundColor: colors.violet,
-        width: '100%'
     }
 })
 

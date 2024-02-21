@@ -1,8 +1,6 @@
+import { StyleSheet} from 'react-native';
 import { StatusBar } from 'react-native';
-import { StyleSheet, View} from 'react-native';
-import { useState } from 'react';
-import Home from './src/screens/Home';
-import ItemListCategory from './src/screens/ItemListCategory';
+import Navigator from './src/navigation/Navigator';
 import colors from './src/global/colors';
 import { useFonts } from "expo-font";
 import { fonts } from "./src/global/fonts";
@@ -10,7 +8,6 @@ import { fonts } from "./src/global/fonts";
 
 export default function App() {
 
-  const [categorySelected, setCategorySelected] = useState('')
   const [fontsLoaded] = useFonts(fonts)
 
   if (!fontsLoaded) {
@@ -18,13 +15,11 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar/>
-      {categorySelected ? 
-      <ItemListCategory categorySelected={categorySelected} setCategorySelected={setCategorySelected}/> :
-      <Home setCategorySelected={setCategorySelected}/>
-      }
-    </View>
+      <Navigator/>
+    </>
+  
   );
 }
 

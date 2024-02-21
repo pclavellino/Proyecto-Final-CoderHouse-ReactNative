@@ -1,11 +1,11 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import colors from "../global/colors";
 
-const CategoryItem = ({category, setCategorySelected}) => {
+const CategoryItem = ({category, navigation}) => {
 
     return (
         <View>
-            <Pressable style={styles.listItem} onPress={() => setCategorySelected(category)}>
+            <Pressable style={styles.listItem} onPress={() => navigation.navigate("ItemListCategory", {category})}>
                 <Text style={styles.listItemText}>{category}</Text>
             </Pressable>
         </View>
