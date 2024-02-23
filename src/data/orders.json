@@ -1,0 +1,66 @@
+[
+    {
+        "id": 421,
+        "userId": 2,
+        "createdAt": 1679869276580,
+        "items": [
+            {
+                "id": 2,
+                "title": "Impresora HP Laser 107A",
+                "description": "Impresora Laser Monocromatica HP Laser 107a",
+                "price": 110000,
+                "stock": 15,
+                "category": "Impresoras",
+                "images": "https://www.mebac.com.ar/salta/wp-content/uploads/2020/02/21.01.106_1000-2.jpg",
+                "quantity": 2
+            },
+            {
+                "id": 7,
+                "title": "Microprocesador Intel Core I5 11400",
+                "description": "Microprocesador Intel Core I5 11400 c/video c/cooler socket 1200",
+                "price": 280000,
+                "stock": 13,
+                "category": "Procesadores",
+                "images": "https://www.fullh4rd.com.ar/img/productos/1/micro-intel-core-i5-11400-0.jpg",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 327,
+        "userId": 6,
+        "createdAt": 1679832276580,
+        "items": [
+            {
+                "id": 9,
+                "title": "Tablet Samsung A8 X200",
+                "description": "Tablet Samsung A8 X200 (4GB RAM / 64GB Almacenamiento / Pantalla 10.5' ",
+                "price": 250000,
+                "stock": 3,
+                "category": "Tablets",
+                "images": "https://s3.eu-west-3.amazonaws.com/class-website-9565/2022/02/wPGvX25602.jpg",
+                "quantity": 3
+            },
+            {
+                "id": 13,
+                "title": "Monitor 22' Samsung S33A",
+                "description": "Monitor LED Samsung 22' Full HD 60Hz",
+                "price": 120000,
+                "stock": 6,
+                "category": "Monitores",
+                "images": "https://mexx-img-2019.s3.amazonaws.com/Monitor-Led-22-Samsung-Full-Hd-60Hz-6Ms-S33A_43564_1.jpeg",
+                "quantity": 1
+            },
+            {
+                "id": 16,
+                "title": "Gabinete Shenlong GT-701",
+                "description": "Gabinete Shenlong GT-701 RGB USB 3.0 Lateral Acrilico",
+                "price": 80000,
+                "stock": 9,
+                "category": "Gabinetes",
+                "images": "https://http2.mlstatic.com/D_NQ_NP_737244-MLA43597706934_092020-O.webp",
+                "quantity": 2
+            }
+        ]
+    }
+]
