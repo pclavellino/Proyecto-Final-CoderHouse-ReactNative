@@ -1,11 +1,19 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import { useDispatch } from "react-redux";
+import { setCategorySelected } from "../features/shop/shopSlice";
 import colors from "../global/colors";
 
 const CategoryItem = ({category, navigation}) => {
 
+    const dispatch = useDispatch();
+
     return (
         <View>
-            <Pressable style={styles.listItem} onPress={() => navigation.navigate("ItemListCategory", {category})}>
+            <Pressable style={styles.listItem} onPress={() => {
+                dispatch(setCategorySelected(category))
+                navigation.navigate("ItemListCategory", {category})
+                }
+            }> 
                 <Text style={styles.listItemText}>{category}</Text>
             </Pressable>
         </View>

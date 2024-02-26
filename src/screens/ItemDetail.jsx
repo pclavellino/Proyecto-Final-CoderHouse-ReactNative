@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import colors from "../global/colors";
+import Counter from "../components/Counter";
 
 const ItemDetail = ({navigation, route}) => {
 
@@ -11,6 +12,7 @@ const ItemDetail = ({navigation, route}) => {
             <Text style={styles.title}>{product.title}</Text>
             <Text style={styles.description}>{product.description}</Text>
             <Text style={styles.price}>$ {product.price}</Text>
+            <Counter></Counter>
             <Pressable style={styles.addCart}>
                 <Text style={styles.addCartText}>Agregar al Carrito</Text>
             </Pressable>
@@ -20,18 +22,18 @@ const ItemDetail = ({navigation, route}) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '85%',
+        width: '90%',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '7.5%',
+        margin: '5%',
         padding: '5%',
         backgroundColor: colors.white,
         elevation: 7,
 
     },
     image: {
-        width: '75%',
-        height: 250,
+        width: '50%',
+        height: 150,
         marginBottom: '5%'
     },
     title: {
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     price: {
         fontSize: 30,
         fontWeight: 'bold',
-        marginTop: 25
+        margin: 15
     },
     addCart: {
         backgroundColor: colors.violet,

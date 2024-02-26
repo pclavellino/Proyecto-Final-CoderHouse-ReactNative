@@ -1,9 +1,10 @@
-import { StyleSheet} from 'react-native';
-import { StatusBar } from 'react-native';
-import colors from './src/global/colors';
+import { StatusBar, StyleSheet } from 'react-native';
 import { useFonts } from "expo-font";
 import { fonts } from "./src/global/fonts";
+import colors from './src/global/colors';
 import TabNavigator from './src/navigation/TabNavigator';
+import { Provider } from 'react-redux';
+import Store from './src/store';
 
 
 export default function App() {
@@ -16,8 +17,10 @@ export default function App() {
 
   return (
     <>
-      <StatusBar/>
-      <TabNavigator/>
+      <Provider store={Store}>
+        <StatusBar/>
+        <TabNavigator/>
+      </Provider>
     </>
   
   );

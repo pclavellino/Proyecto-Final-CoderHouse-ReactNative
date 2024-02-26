@@ -1,4 +1,4 @@
-import { Image, View, Text, StyleSheet, StatusBar } from "react-native";
+import { Image, View, Text, StyleSheet } from "react-native";
 import Logo from "./Logo";
 import cartImage from '../../assets/cart.png';
 import colors from "../global/colors";
