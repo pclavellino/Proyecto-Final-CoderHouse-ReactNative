@@ -8,7 +8,6 @@ const Header = ({title}) => {
         <View>
             <View style={styles.containerTitle}>
                 <Logo/>
-                <Image style={styles.cart} source={cartImage}/>
             </View>
             <Text style={styles.title}>{title}</Text>
         </View>
@@ -26,10 +25,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         width: '100%',
-    },
-    cart: {
-        width: 30,
-        height: 30
     },
     title: {
         fontSize: 22,

@@ -1,8 +1,16 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
+import { useDispatch } from "react-redux";
+import { removeItem } from "../features/shop/cartSlice";
 import colors from "../global/colors";
 
 const CartItem = ({item}) => {
+
+    const dispatch = useDispatch()
+    const onRemoveItem = () => {
+        dispatch(removeItem(item))
+    }
+
     return (
         <View style={styles.itemContainer}>
             <View style={styles.textContainer}>
@@ -12,7 +20,7 @@ const CartItem = ({item}) => {
             </View>
             <View style={styles.imageContainer}>
                 <Image source={{uri: item.images}} style={styles.itemImage}/>
-                <Pressable>
+                <Pressable onPress={onRemoveItem}>
                     <MaterialIcons name="delete" size={30} color="black" />
                 </Pressable>
             </View>

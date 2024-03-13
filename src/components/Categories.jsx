@@ -1,22 +1,27 @@
 import { FlatList, View, StyleSheet } from "react-native";
-import { useSelector } from "react-redux";
+import { useGetCategoriesQuery } from "../services/shopService";
 import CategoryItem from "./CategoryItem";
+import Loader from "./Loader";
 
 const Categories = ({navigation}) => {
 
-    const categories = useSelector((state) => state.shopReducer.value.categories);
+    const { data, isLoading, error} = useGetCategoriesQuery();
 
-    return (
-        <View style={styles.listContainer}>
-            <FlatList
-                style={styles.list}
-                data={categories}
-                renderItem={({item}) => <CategoryItem category={item} navigation={navigation}/>}
-                keyExtractor={(category) => category}
-                showsVerticalScrollIndicator={false}
-            />
-        </View>
-    )
+    if (isLoading) {
+        return <Loader/>
+    } else {
+        return (
+            <View style={styles.listContainer}>
+                <FlatList
+                    style={styles.list}
+                    data={data}
+                    renderItem={({item}) => <CategoryItem category={item} navigation={navigation}/>}
+                    keyExtractor={(category) => category}
+                    showsVerticalScrollIndicator={false}
+                />
+            </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({

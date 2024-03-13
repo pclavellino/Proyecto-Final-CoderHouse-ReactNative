@@ -3,14 +3,12 @@ import colors from "../global/colors";
 
 const OrderItem = ({order}) => {
 
-    const total = order.items.reduce((acumulador, item) => acumulador + (item.price * item.quantity), 0)
-
     return (
         <View style={styles.container}>
             <View style={styles.orderContainer}>
                 <Text style={styles.orderText}>Numero de Pedido: {order.id}</Text>
-                <Text style={styles.orderText}>Fecha: {new Date(order.createdAt).toLocaleString()} </Text>
-                <Text style={styles.orderText}>Monto: $ {total} </Text>
+                <Text style={styles.orderText}>Fecha: {order.createdAt} </Text>
+                <Text style={styles.orderText}>Monto: $ {order.total} </Text>
             </View>
             <View>
                 <Pressable style={styles.buttonContainer}>

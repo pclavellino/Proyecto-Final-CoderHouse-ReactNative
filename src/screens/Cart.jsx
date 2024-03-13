@@ -1,36 +1,54 @@
 import { FlatList, View, Text, Pressable, StyleSheet } from "react-native";
-import { useState, useEffect } from "react";
 import CartItem from "../components/CartItem";
-import allCartItems from "../data/cart.json";
 import colors from "../global/colors";
+import { useDispatch, useSelector } from "react-redux";
+import { emptyCart } from "../features/shop/cartSlice";
+import { usePostOrderMutation } from "../services/shopService";
 
 const Cart = () => {
 
-    const [cartItems, setCartItems] = useState([])
-    const [total, setTotal] = useState(0)
+    const cartItems = useSelector((state) => state.cartReducer.value.items)
+    const total = useSelector((state) => state.cartReducer.value.total)
+    const dispatch = useDispatch()
+    const [triggerPost, result] = usePostOrderMutation()
 
-    useEffect(() => {
-        const total = allCartItems.reduce((acumulador, item) => acumulador + (item.quantity * item.price), 0)
-        setTotal(total)
-        setCartItems(allCartItems)
-    })
+    const confirmCart = () => {
+        triggerPost({id: Math.random() ,total, cartItems, user:'loggedUser', createdAt: new Date().toLocaleString()})
+    }
 
-    return (
-        <View style={styles.container}>
-            <FlatList
-            data={cartItems}
-            renderItem={({item}) => <CartItem item={item}/>}
-            keyExtractor={(cartItems) => cartItems.id}
-            />
-            <View style={styles.totalContainer}>
-                <Text style={styles.totalPrice}>Total:</Text>
-                <Text style={styles.totalPrice}>$ {total}</Text>
+    const onEmptyCart = () => {
+        dispatch(emptyCart())
+    }
+
+    if (cartItems.length > 0) {
+        return (
+    
+            <View style={styles.container}>
+                <FlatList
+                data={cartItems}
+                renderItem={({item}) => <CartItem item={item}/>}
+                keyExtractor={(cartItems) => cartItems.id}
+                />
+                <View style={styles.totalContainer}>
+                    <Text style={styles.totalPrice}>Total:</Text>
+                    <Text style={styles.totalPrice}>$ {total}</Text>
+                </View>
+                <Pressable style={styles.buttonContainer} onPress={confirmCart}>
+                    <Text style={styles.buttonText}>Confirmar Compra</Text>
+                </Pressable>
+                <Pressable style={styles.buttonContainer} onPress={onEmptyCart}>
+                    <Text style={styles.buttonText}>Vaciar Carrito</Text>
+                </Pressable>
             </View>
-            <Pressable style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>Vaciar Carrito</Text>
-            </Pressable>
-        </View>
-    )
+        )
+    } else {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.noProductText}>No hay productos en el carrito.</Text>
+            </View>
+        )
+    }
+
 }
 
 const styles = StyleSheet.create({
@@ -50,6 +68,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         backgroundColor: colors.violet,
+        margin: '5%',
         width: '50%',
         borderRadius: 7,
         elevation: 7
@@ -61,6 +80,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         paddingVertical: '5%',
         paddingHorizontal: '5%'
+    }, 
+    noProductText: {
+        fontSize: 26,
+        textAlign: 'center',
+        padding: '15%',
+        paddingTop: '20%'
     }
     
 })

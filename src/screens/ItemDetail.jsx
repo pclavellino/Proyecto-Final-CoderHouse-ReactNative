@@ -1,10 +1,20 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import colors from "../global/colors";
 import Counter from "../components/Counter";
+import { addItem } from "../features/shop/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const ItemDetail = ({navigation, route}) => {
 
     const { product } = route.params; 
+
+    const dispatch = useDispatch();
+
+    const counter = useSelector((state) => state.counterReducer.value);
+
+    const onAddCart = () => {
+            dispatch(addItem({...product, quantity: counter}))
+    }
 
     return (
         <View style={styles.container}>
@@ -13,7 +23,7 @@ const ItemDetail = ({navigation, route}) => {
             <Text style={styles.description}>{product.description}</Text>
             <Text style={styles.price}>$ {product.price}</Text>
             <Counter></Counter>
-            <Pressable style={styles.addCart}>
+            <Pressable style={styles.addCart} onPress={onAddCart}>
                 <Text style={styles.addCartText}>Agregar al Carrito</Text>
             </Pressable>
         </View>

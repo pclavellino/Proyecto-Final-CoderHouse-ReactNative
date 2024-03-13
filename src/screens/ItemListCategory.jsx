@@ -1,36 +1,44 @@
-import { FlatList, View, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet, Text } from "react-native";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Search from "../components/Search";
 import ProductItem from "../components/ProductItem";
 import colors from "../global/colors";
+import { useGetProductsByCategoryQuery } from "../services/shopService";
+import Loader from "../components/Loader";
 
 const ItemListCategory = ({navigation}) => {
 
-    const productsFilteredByCategory = useSelector((state) => state.shopReducer.value.productsFilteredByCategory)
+    const category = useSelector((state) => state.shopReducer.value.categorySelected)
+    const { data : productsFilteredByCategory , isLoading, error} = useGetProductsByCategoryQuery(category)
     const [products, setProducts] = useState([]);
     const [keyword, setKeyword] = useState('')
 
     useEffect(() => {
-            const productFiltered = productsFilteredByCategory.filter((item) => item.title.includes(keyword))
-            setProducts(productFiltered)
-    }, [productsFilteredByCategory, keyword])
-    
-    return (
+            if (productsFilteredByCategory) {
+                const productArray = Object.values(productsFilteredByCategory)
+                const productFiltered = productArray.filter((item) => item.title.includes(keyword))
+                setProducts(productFiltered)
+            }
+        }, [productsFilteredByCategory, keyword])
 
-        <View style={styles.container}>
-            <Search onSearch={setKeyword}/>
-            <FlatList
-                style={styles.listContainer}
-                data={products}
-                renderItem={({item}) => <ProductItem product={item} navigation={navigation}/>}
-                keyExtractor={(item) => item.id}
-                showsVerticalScrollIndicator={false}
-                >
-            </FlatList> 
-        </View>
-
-    )
+    if (isLoading) {
+        return <Loader/>
+        } else {
+            return (
+                <View style={styles.container}>
+                    <Search onSearch={setKeyword}/>
+                    <FlatList
+                        style={styles.listContainer}
+                        data={products}
+                        renderItem={({item}) => <ProductItem product={item} navigation={navigation}/>}
+                        keyExtractor={(item) => item.id}
+                        showsVerticalScrollIndicator={false}
+                        >
+                    </FlatList> 
+                </View>
+            )
+        }
 }
 
 const styles = StyleSheet.create({
