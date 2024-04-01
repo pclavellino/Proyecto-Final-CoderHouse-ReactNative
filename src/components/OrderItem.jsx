@@ -10,11 +10,6 @@ const OrderItem = ({order}) => {
                 <Text style={styles.orderText}>Fecha: {order.createdAt} </Text>
                 <Text style={styles.orderText}>Monto: $ {order.total} </Text>
             </View>
-            <View>
-                <Pressable style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>Detalles</Text>
-                </Pressable>
-            </View>
         </View>
     )
 }
@@ -38,19 +33,6 @@ const styles = StyleSheet.create({
     },
     orderText: {
         fontSize: 16,
-    },
-    buttonContainer: {
-        backgroundColor: colors.violet,
-        borderRadius: 7,
-        elevation: 7
-    }, 
-    buttonText: {
-        color: colors.white,
-        textAlign: 'center',
-        fontSize: 16,
-        fontWeight: 'bold',
-        paddingVertical: '3%',
-        paddingHorizontal: '5%'
     }
 })
 

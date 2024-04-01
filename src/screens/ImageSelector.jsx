@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { setCameraImage } from "../features/auth/authSlice";
+import { setCameraImage, setProfileImage } from "../features/auth/authSlice";
 import ChangeButton from "../components/ChangeButton";
 import * as ImagePicker from "expo-image-picker";
 import { usePostProfileImageMutation } from "../services/shopService";
 import colors from "../global/colors";
+import ProfileImage from "../components/ProfileImage";
 
 const ImageSelector = ({navigation}) => {
 
-    const {imageCamera, localId} = useSelector((state) => state.authReducer.value)
+    const {imageProfile, localId} = useSelector((state) => state.authReducer.value)
     const [cameraPermissionError, setCameraPermissionError] = useState(false)
-    const [image, setImage] = useState(imageCamera)
+    const [image, setImage] = useState(imageProfile)
     const [triggerSaveProfileImage, result] = usePostProfileImageMutation()
     const dispatch = useDispatch()
 
@@ -43,6 +44,7 @@ const ImageSelector = ({navigation}) => {
 
     const confirmImage = () => {
         dispatch(setCameraImage(image))
+        dispatch(setProfileImage(image))
         triggerSaveProfileImage({image, localId})
         navigation.goBack()
     }
@@ -51,13 +53,17 @@ const ImageSelector = ({navigation}) => {
         <View style={styles.container}>
             { image ? 
             <>
-                <Image source={{uri: image}} style={styles.image} resizeMode="contain"/>
+                <View style={styles.image}>
+                    <ProfileImage image={image}/>
+                </View>
                 <ChangeButton text={"Tomar otra Foto"} onPress={pickImage}/>
                 <ChangeButton text={"Confirmar Foto"} onPress={confirmImage}/>
             </>
             :
             <>
-                <Image source={require("../../assets/defaultProfileImage.png")} style={styles.image} resizeMode="contain"/>
+                <View style={styles.image}>
+                    <ProfileImage image={image}/>
+                </View>
                 <ChangeButton text={"Tomar Foto"} onPress={pickImage}/> 
                 { cameraPermissionError ? <Text style={styles.error}>Habilita los permisos de la camara para tomar la foto</Text> : null }
             </> 
@@ -72,9 +78,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        width: '50%',
-        height: '50%',
-        marginVertical: '5%'
+        width: 200,
+        height: 200,
+        marginVertical: '5%',
+        borderRadius: 100
     },
     error: {
         width: '80%',

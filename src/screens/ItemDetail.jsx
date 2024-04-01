@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable, Alert } from "react-native";
 import colors from "../global/colors";
 import Counter from "../components/Counter";
 import { addItem } from "../features/shop/cartSlice";
@@ -14,6 +14,9 @@ const ItemDetail = ({navigation, route}) => {
 
     const onAddCart = () => {
             dispatch(addItem({...product, quantity: counter}))
+            Alert.alert('PRODUCTO AGREGADO', `El producto ${product.title} fue agregado al carrito`, [
+                {text: 'CONTINUAR'},
+            ]);
     }
 
     return (

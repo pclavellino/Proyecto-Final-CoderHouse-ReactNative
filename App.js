@@ -3,11 +3,11 @@ import { useFonts } from "expo-font";
 import { fonts } from "./src/global/fonts";
 import colors from './src/global/colors';
 import MainNavigator from './src/navigation/MainNavigator';
-import TabNavigator from './src/navigation/TabNavigator';
 import { Provider } from 'react-redux';
 import Store from './src/store';
-import { useState } from 'react';
+import { init } from './src/db';
 
+init()
 
 export default function App() {
 

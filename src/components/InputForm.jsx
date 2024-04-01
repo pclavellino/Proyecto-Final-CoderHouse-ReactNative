@@ -2,7 +2,6 @@ import { useState } from "react";
 import { View, Text, TextInput, StyleSheet  } from "react-native";
 import colors from "../global/colors";
 
-
 const InputForm = ({label, error, onChange, isSecure }) => {
 
     const [ input, setInput ] = useState("")

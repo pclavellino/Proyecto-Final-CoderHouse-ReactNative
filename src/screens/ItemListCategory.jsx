@@ -35,7 +35,7 @@ const ItemListCategory = ({navigation}) => {
                         keyExtractor={(item) => item.id}
                         showsVerticalScrollIndicator={false}
                         >
-                    </FlatList> 
+                    </FlatList>
                 </View>
             )
         }

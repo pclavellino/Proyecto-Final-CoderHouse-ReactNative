@@ -7,6 +7,7 @@ import InputForm from "../components/InputForm";
 import SubmitButton from "../components/SubmitButton";
 import colors from "../global/colors";
 import { loginSchema } from "../validations/loginSchema";
+import { insertSession } from "../db";
 
 const Login = ({navigation}) => {
 
@@ -37,12 +38,18 @@ const Login = ({navigation}) => {
                     break;
         }
     }
-
 }
 
     useEffect(() => {
         if (result.data) {
-            dispatch(setUser(result.data))
+            dispatch(setUser(result.data));
+            insertSession({
+                email: result.data.email,
+                localId: result.data.localId,
+                token: result.data.idToken
+            })
+            .then((result) => { null })
+            .catch((error) => { null })
         }
     }, [result])
 

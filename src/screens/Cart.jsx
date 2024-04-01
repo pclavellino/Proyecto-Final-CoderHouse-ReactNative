@@ -1,4 +1,4 @@
-import { FlatList, View, Text, Pressable, StyleSheet } from "react-native";
+import { FlatList, View, Text, Pressable, StyleSheet, Alert } from "react-native";
 import CartItem from "../components/CartItem";
 import colors from "../global/colors";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,15 +9,23 @@ const Cart = () => {
 
     const cartItems = useSelector((state) => state.cartReducer.value.items)
     const total = useSelector((state) => state.cartReducer.value.total)
+    const userId = useSelector((state) => state.authReducer.value.localId)
     const dispatch = useDispatch()
     const [triggerPost, result] = usePostOrderMutation()
 
     const confirmCart = () => {
-        triggerPost({id: Math.random() ,total, cartItems, user:'loggedUser', createdAt: new Date().toLocaleString()})
+        triggerPost({id: Math.random() ,total, cartItems, user: userId, createdAt: new Date().toLocaleString()})
+        Alert.alert('ORDEN GENERADA', 'Su orden ha sido generada correctamente', [
+            {text: 'CONTINUAR'},
+        ]);
+        dispatch(emptyCart())
     }
 
-    const onEmptyCart = () => {
-        dispatch(emptyCart())
+    const onEmptyCart = () => {  
+        Alert.alert('VACIAR CARRITO', '¿Desea eliminar todos los productos del carrito?', [
+            {text: 'SI', onPress: () => { dispatch(emptyCart()) }},
+            {text: 'NO'}
+        ]);
     }
 
     if (cartItems.length > 0) {
