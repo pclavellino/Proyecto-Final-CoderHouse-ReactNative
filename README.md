@@ -67,8 +67,8 @@ Esta pantalla lista las ordenes previas del usuario.
 
 Para instalar y ejecutar la aplicación, primero debes clonar el repositorio en alguna carpeta. Luego, debes ejecutar los siguientes comandos desde la consola o terminal:
 
-npm install
-npm start
+1. npm install
+2. npm start
 
 
 ## Autor
