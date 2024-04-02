@@ -1,4 +1,4 @@
-import { FlatList, View, StyleSheet, Text } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Search from "../components/Search";
@@ -6,6 +6,7 @@ import ProductItem from "../components/ProductItem";
 import colors from "../global/colors";
 import { useGetProductsByCategoryQuery } from "../services/shopService";
 import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 const ItemListCategory = ({navigation}) => {
 
@@ -24,21 +25,25 @@ const ItemListCategory = ({navigation}) => {
 
     if (isLoading) {
         return <Loader/>
-        } else {
-            return (
-                <View style={styles.container}>
-                    <Search onSearch={setKeyword}/>
-                    <FlatList
-                        style={styles.listContainer}
-                        data={products}
-                        renderItem={({item}) => <ProductItem product={item} navigation={navigation}/>}
-                        keyExtractor={(item) => item.id}
-                        showsVerticalScrollIndicator={false}
-                        >
-                    </FlatList>
-                </View>
-            )
-        }
+    } 
+
+    if (error) {
+        return <Error error={error.message}/>
+    }
+    
+    return (
+        <View style={styles.container}>
+            <Search onSearch={setKeyword}/>
+            <FlatList
+                style={styles.listContainer}
+                data={products}
+                renderItem={({item}) => <ProductItem product={item} navigation={navigation}/>}
+                keyExtractor={(item) => item.id}
+                showsVerticalScrollIndicator={false}
+                >
+            </FlatList>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

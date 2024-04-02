@@ -4,8 +4,7 @@ import CartStack from "./CartStack";
 import ShopStack from "./ShopStack";
 import OrderStack from "./OrderStack";
 import colors from "../global/colors";
-import { Entypo } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { Entypo, FontAwesome5 } from '@expo/vector-icons';
 import MyProfileStack from "./MyProfileStack";
 
 
